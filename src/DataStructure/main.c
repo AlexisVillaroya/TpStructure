@@ -35,7 +35,6 @@ float test(int a) {
 int main(int argc, char** argv) {
 
 
-
     return (EXIT_SUCCESS);
 }
 
