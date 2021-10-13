@@ -4,6 +4,9 @@
 #include "DataStructure/stack.h"
 #include "DataStructure/queue.h"
 
+void test_stack(Stack *s);
+void test_queue();
+
 float test(int a) {
     //errno = a;
     assert(a == 5);
@@ -38,5 +41,16 @@ void test_queue(){
     dequeue(&q);
     assert(q.index == 1);
     printf("%.01f\n", q.data[0]);
-    printf("Tous c'est bien passé !\n");	
+    printf("Tout s'est bien passé !\n");
+}	
+
+void test_stack(Stack *s){
+	init_stack(s);
+	push(s, 5.0);
+	pop(s);
+	is_stack_empty(s);
+	peek(s);
+	dup(s);
+	swap(s);
+	clear(s);
 }

@@ -11,6 +11,8 @@
  */
 
 #include <stdbool.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 #ifndef STACK_H
 #define STACK_H
