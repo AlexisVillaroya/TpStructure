@@ -16,28 +16,22 @@ int main(int argc, char** argv) {
 }
 
 void test_queue(){
-	Queue q;
-    clear(&q);
-    init_queue(&q);
-    assert(q.index == 0);
-    enqueue(&q, 254);
-    assert(q.data[0] == 254);
-    enqueue(&q, 15);
-    assert(q.data[1] == 15);
-
-    printf("%.01f ", q.data[0]);
-    printf("%.01f\n", q.data[1]);
-    dequeue(&q);
-    assert(q.index == 1);
-    dequeue(&q);
-    assert(q.index == 0);
-    printf("%.01f\n", q.data[0]);
-
-    for(int i=100; i > 0; i--){
-        printf("%.01f ", q.data[i]);
-    }
-
-    printf("Tout s'est bien passé !\n");
+    
+    Queue *q = malloc(sizeof(Queue));
+	init_queue(q);
+	assert(q->index == 0);
+	assert(is_queue_empty(q) == true);
+	enqueue(q, 3);
+    assert(q->data[0] == 3);
+	enqueue(q, 2);
+    assert(q->data[1] == 2);
+    assert(q->index == 2);
+	assert(front(q) == 0);
+	assert(is_queue_empty(q) == false);
+	dequeue(q);
+	assert(q->index == 1);
+	clear(q);
+	assert(q->index == 0);
 }	
 
 void test_stack(Stack *s){

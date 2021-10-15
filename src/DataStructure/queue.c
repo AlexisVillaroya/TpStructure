@@ -28,11 +28,11 @@ void init_queue(Queue *s){
  * */
 
 void enqueue(Queue *q, float value){
-    int i;
-    if(q->data[q->index] != 0){
-        q->data[q->index+1] = value;
+    if(q->index == 100){
+        printf("La queue est remplit");
     }else{
-        q->data[0] = value;
+        q->data[q->index] = value;
+        q->index++;
     }
 }
 
@@ -48,7 +48,7 @@ float dequeue(Queue *q){
 
     if(q->data[0] != 0){
         element = q->data[q->index-1];
-        q->index++;
+        q->index--;
     }
     return element;
 }
@@ -72,7 +72,7 @@ bool is_queue_empty(Queue *q){
  * */
 
 float front(Queue *q){
-    return q->data[q->index - 1];
+    return q->data[q->index+1];
 }
 
 /**
@@ -83,7 +83,5 @@ float front(Queue *q){
  * */
 
 void clear(Queue *q){
-    for(int i = 0; i < 100; i++){
-        q->data[i] = 0;
-    }
+    init_queue(q);
 }
