@@ -2,7 +2,9 @@
  * Auteur : Alexis Villaroya et Roman Lecomte
  * */
 
+#include <stdio.h>
 #include "array_list.h"
+
 
 /** @brief Initilisatioin de la liste (remet l'index à 0) 
  * 
@@ -27,9 +29,9 @@ void insert_at(Array_list *l, int position, float value){
         add(l, value);
     }else{
         for(int i = l->index; i >= position; i--)
-        l->data[i + 1] = l->data[i]; 
-        l->data[position-1] = value;    
-    }
+            l->data[i] = l->data[i-1];
+        l->data[position-1] = value;
+    }    
 }
 
 /** @brief ajoute une valeur à la fin de la liste
@@ -53,12 +55,13 @@ void add(Array_list *l, float value){
 
 float remove_at(Array_list *l, int position){
     float temp;
-    for(int i= l->index - 1; i >= position; i--){
-        temp = l->data[i];
+    int i;
+    for(i = position-1; i < l->index; i++){ 
         l->data[i] = l->data[i+1];
+        l->data[i+1] = 0;       
     }
-    return l->data[position-1] = temp;
-
+    l->index--;
+    return 0;
 }
 
 /** @brief renvoie une valeur dans la liste

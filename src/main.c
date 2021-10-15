@@ -11,17 +11,14 @@ void test_array();
 
 int main(int argc, char** argv) {
     //test_queue();
-<<<<<<< HEAD
     // float a=0.0f;
     // Stack *s = malloc(sizeof(Stack));
     // test_stack(s);
     test_array();
-=======
     //test_heap();
     float a=0.0f;
     Stack *s = malloc(sizeof(Stack));
-    test_stack(s);
->>>>>>> 5dbcdac19dfb50bea975145d49519e6446947b75
+    //test_stack(s);
     return (EXIT_SUCCESS);
 }
 
@@ -35,11 +32,12 @@ void test_array(){
     assert(l->data[1] == 2.0);
     add(l, 3.0);
     assert(l->data[2] == 3.0);
+    assert(l->index == 3);
     insert_at(l, 2, 13.0);
     assert(l->data[1] == 13.0);
-    assert(get_at(l, 2) == 13.0);
-    remove_at(l, 1);
-    //assert(l->data[0] == 13);
+    assert(l->data[2] == 2.0);
+    remove_at(l, 2);
+    //assert(l->data[2] == 2);
     //assert(get_at(l, 2) == 2);
     for (size_t i = 0; i < 5; i++)
     {
