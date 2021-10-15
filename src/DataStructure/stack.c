@@ -9,7 +9,8 @@
 
 // Initialise la pile
 void init_stack(Stack *s){
-    s->index = -1;
+    (*s).index = -1;
+    
 }
 
 // Ajoute un élément à la pile en incrémentant son index conséquent
