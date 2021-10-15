@@ -53,6 +53,6 @@ void swap(Stack *s){
 }
 
 //Réinitialise la pile 
-void clear(Stack *s){
+void cls(Stack *s){
     init_stack(s);
 }

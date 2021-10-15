@@ -30,9 +30,7 @@ void init_queue(Queue *s){
 void enqueue(Queue *q, float value){
     int i;
     if(q->data[q->index] != 0){
-        for(i=q->index; i != 0; i++){
-            q->data[i-1] = value;
-        }
+        q->data[q->index+1] = value;
     }else{
         q->data[0] = value;
     }

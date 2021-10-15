@@ -33,5 +33,5 @@ bool is_stack_empty(Stack *s);
 float peek(Stack *s); // aka top or front
 void dup(Stack *s);
 void swap(Stack *s);
-//void clear(Stack *s);
+void cls(Stack *s);
 
