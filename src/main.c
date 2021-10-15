@@ -49,7 +49,6 @@ void test_stack(Stack *s){
     assert(s->data[s->index] == 52.3f);
 	pop(s);
     assert(s->data[s->index] == 5.0);
-	is_stack_empty(s);
     assert(is_stack_empty(s) == 0);
 
     assert(peek(s) == 5.0);
