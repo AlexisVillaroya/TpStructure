@@ -11,10 +11,17 @@ void test_array();
 
 int main(int argc, char** argv) {
     //test_queue();
+<<<<<<< HEAD
     // float a=0.0f;
     // Stack *s = malloc(sizeof(Stack));
     // test_stack(s);
     test_array();
+=======
+    //test_heap();
+    float a=0.0f;
+    Stack *s = malloc(sizeof(Stack));
+    test_stack(s);
+>>>>>>> 5dbcdac19dfb50bea975145d49519e6446947b75
     return (EXIT_SUCCESS);
 }
 
@@ -58,6 +65,8 @@ void test_queue(){
 	assert(q->index == 1);
 	clear(q);
 	assert(q->index == 0);
+
+    printf("#  TEST UNITAIRES EFFECTUES AVEC SUCCES SUR QUEUE.C  #\n");
 }	
 
 void test_stack(Stack *s){
@@ -70,7 +79,6 @@ void test_stack(Stack *s){
     assert(s->data[s->index] == 52.3f);
 	pop(s);
     assert(s->data[s->index] == 5.0);
-	is_stack_empty(s);
     assert(is_stack_empty(s) == 0);
     assert(peek(s) == 5.0);
 	dup(s);
@@ -80,4 +88,6 @@ void test_stack(Stack *s){
     assert(peek(s) == 5.0);
 	cls(s);
     assert(is_stack_empty(s) == 1);
+    printf("#  TEST UNITAIRES EFFECTUES AVEC SUCCES SUR STACK.C  #\n");
+
 }
