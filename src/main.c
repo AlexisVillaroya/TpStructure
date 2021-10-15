@@ -9,6 +9,7 @@ void test_queue();
 
 int main(int argc, char** argv) {
     //test_queue();
+    //test_heap();
     float a=0.0f;
     Stack *s = malloc(sizeof(Stack));
     test_stack(s);
@@ -32,6 +33,8 @@ void test_queue(){
 	assert(q->index == 1);
 	clear(q);
 	assert(q->index == 0);
+
+    printf("#  TEST UNITAIRES EFFECTUES AVEC SUCCES SUR QUEUE.C  #\n");
 }	
 
 void test_stack(Stack *s){
@@ -53,4 +56,6 @@ void test_stack(Stack *s){
     assert(peek(s) == 5.0);
 	cls(s);
     assert(is_stack_empty(s) == 1);
+    printf("#  TEST UNITAIRES EFFECTUES AVEC SUCCES SUR STACK.C  #\n");
+
 }

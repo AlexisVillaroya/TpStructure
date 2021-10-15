@@ -11,6 +11,8 @@
  */
 
 #include <stdbool.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 #ifndef HEAP_H
 #define HEAP_H
