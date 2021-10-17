@@ -26,6 +26,8 @@ INCLUDE	:= include
 # define lib directory
 LIB		:= lib
 
+DOXYGENCMD = Doxyfile
+
 ifeq ($(OS),Windows_NT)
 MAIN	:= main.exe
 SOURCEDIRS	:= $(SRC)
@@ -89,3 +91,6 @@ clean:
 run: all
 	./$(OUTPUTMAIN)
 	@echo Executing 'run: all' complete!
+
+documentation:
+	-doxygen $(DOXYGENCMD)
